@@ -8,12 +8,13 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    // Create component
+    // Create component and append to element
     this.map = new google.maps.Map(this.refs.map , {
       center: { lat: this.props.lat, lng: this.props.lng },
       zoom: 8
     });
   }
+  
   render() {
     return (
       // Ref hooks element to component
