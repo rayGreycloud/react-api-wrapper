@@ -2,19 +2,27 @@ import React, { Component } from 'react';
 
 // Custom libary to be implemented
 export default class extends Component {
+
   // Only render component one time
   shouldComponentUpdate() {
     return false;
   }
 
   componentDidMount() {
+    let pos = {lat: this.props.lat, lng: this.props.lng};
+
     // Create component and append to element
     this.map = new google.maps.Map(this.refs.map , {
-      center: { lat: this.props.lat, lng: this.props.lng },
+      center: pos,
       zoom: 8
     });
+
+    this.marker = new google.maps.Marker({
+      position: pos,
+      map: this.map
+    });
   }
-  
+
   render() {
     return (
       // Ref hooks element to component
