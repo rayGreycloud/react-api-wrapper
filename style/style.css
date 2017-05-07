@@ -4,10 +4,14 @@ html, body {
   padding: 0;
 }
 
-#map {
+.width90pct {
+  height: 90%;
+}
+
+.wrapper {
   height: 100%;
 }
 
-.width90pct {
-  height: 90%; 
+#map {
+  height: 100%;
 }
